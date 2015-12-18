@@ -32,7 +32,7 @@ function matchAll(str, regex) {
   while (m = regex.exec(str)) {
     res.push(m[1]);
   }
-  return _(_.uniq(res), '_');
+  return _.uniq(res).filter(function(i) { return i !== '_'});
 }
 
 function generatePage(servers) {
